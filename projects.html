@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Scottish Luxury Interior & Furniture</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .filter-btn {
+      padding: 10px 22px;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-border);
+      background: transparent;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: var(--sans);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #000;
+    }
+
+    .project-card[data-cat] {
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .project-card.hidden-card {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.96);
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .full-furnishing {
+      padding: var(--pad);
+      background: var(--dark);
+    }
+
+    .furnishing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .furnish-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .furnish-card img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .furnish-card.wide {
+      grid-column: span 2;
+    }
+
+    .furnish-card.wide img { height: 500px; }
+    .furnish-card:hover img { transform: scale(1.06); }
+
+    .furnish-overlay {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      padding: 32px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    }
+
+    .furnish-overlay p {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .furnish-overlay h3 { color: var(--white); font-size: 1.4rem; }
+
+    @media (max-width: 768px) {
+      .furnishing-grid { grid-template-columns: 1fr; }
+      .furnish-card.wide { grid-column: span 1; }
+      .furnish-card img,
+      .furnish-card.wide img { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="logo">Scottish Luxury</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="openMenu()">&#9776;</button>
+  </header>
+
+  <div class="overlay-menu" id="overlayMenu">
+    <div class="close-btn" onclick="closeMenu()">&#10005;</div>
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="about.html" onclick="closeMenu()">About</a></li>
+      <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="projects-hero">
+    <span>Our Portfolio</span>
+    <h1>Luxury Projects</h1>
+    <p>Discover our collection of bespoke interiors, handcrafted furniture, and luxury spaces crafted with precision, elegance, and timeless design.</p>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="craft-section reveal">
+    <div class="craft-image">
+      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800" alt="Luxury Interior">
+    </div>
+    <div class="craft-content">
+      <span>Our Philosophy</span>
+      <h2>Crafting Exceptional Spaces</h2>
+      <p>Every project begins with a vision. At Scottish Luxury, we combine premium materials, timeless aesthetics, and meticulous craftsmanship to create interiors that are both beautiful and functional.</p>
+      <p>From luxury residences to executive workspaces, our portfolio reflects a commitment to excellence, precision, and enduring design.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section class="featured-project">
+    <span>Featured Project</span>
+    <h2>The Mayfair Residence</h2>
+    <p>A complete luxury interior transformation featuring bespoke furniture, custom cabinetry, and premium finishing designed for modern living.</p>
+    <div class="featured-image reveal">
+      <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1200" alt="Featured Project">
+    </div>
+    <a href="luxury-wardrobe.html" class="view-project">View Project &rarr;</a>
+  </section>
+
+  <!-- FULL BUILDING FURNISHING -->
+  <section class="full-furnishing">
+    <div class="section-header reveal">
+      <span class="eyebrow">Full Building Furnishing</span>
+      <h2>Complete Space Transformations</h2>
+      <p>From a single room to an entire building — we handle every detail, every finish, every space.</p>
+    </div>
+    <div class="furnishing-grid">
+      <div class="furnish-card wide reveal">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200" alt="Full Building Furnishing">
+        <div class="furnish-overlay">
+          <p>Full Building Furnishing</p>
+          <h3>GRA Enugu — Complete Home Transformation</h3>
+        </div>
+      </div>
+      <div class="furnish-card reveal">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700" alt="Kitchen Furnishing">
+        <div class="furnish-overlay">
+          <p>Kitchen & Dining</p>
+          <h3>Full Kitchen & Dining Build</h3>
+        </div>
+      </div>
+      <div class="furnish-card reveal">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700" alt="Office Furnishing">
+        <div class="furnish-overlay">
+          <p>Commercial Furnishing</p>
+          <h3>Executive Office Complex</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PROJECTS WITH WORKING FILTER -->
+  <section class="all-projects">
+    <span>Our Work</span>
+    <h2>Luxury Project Collection</h2>
+    <p>Explore our finest bespoke interiors and furniture designs.</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="custom">Custom Furniture</button>
+      <button class="filter-btn" data-filter="wardrobe">Wardrobes</button>
+      <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+      <button class="filter-btn" data-filter="office">Offices</button>
+      <button class="filter-btn" data-filter="bedroom">Bedrooms</button>
+      <button class="filter-btn" data-filter="sofa">Sofas & Seats</button>
+      <button class="filter-btn" data-filter="console">Console</button>
+    </div>
+
+    <div class="project-grid" id="projectGrid">
+      <a href="custom-furniture.html" class="project-card reveal" data-cat="custom">
+        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Custom Furniture</p>
+          <h3>Bespoke Tables & Storage</h3>
+        </div>
+      </a>
+      <a href="luxury-wardrobe.html" class="project-card reveal" data-cat="wardrobe">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Wardrobe</p>
+          <h3>Luxury Wardrobe Collection</h3>
+        </div>
+      </a>
+      <a href="kitchen.html" class="project-card reveal" data-cat="kitchen">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Kitchen</p>
+          <h3>Modern Kitchen Designs</h3>
+        </div>
+      </a>
+      <a href="executive.html" class="project-card reveal" data-cat="office">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Office</p>
+          <h3>Executive Office Interiors</h3>
+        </div>
+      </a>
+      <a href="master.html" class="project-card reveal" data-cat="bedroom">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Bedroom</p>
+          <h3>Master Bedroom Suite</h3>
+        </div>
+      </a>
+      <a href="sofa.html" class="project-card reveal" data-cat="sofa">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Sofa & Seating</p>
+          <h3>L-Shape & Custom Sofas</h3>
+        </div>
+      </a>
+      <a href="console.html" class="project-card reveal" data-cat="console">
+        <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=700">
+        <div class="project-info">
+          <p class="proj-cat">Console & Seats</p>
+          <h3>Console Tables & Accent Seating</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="design-process">
+    <span>Our Process</span>
+    <h2>How We Bring Ideas To Life</h2>
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <h3>01</h3>
+        <h4>Consultation</h4>
+        <p>Understanding your vision, lifestyle, and space requirements in detail.</p>
+      </div>
+      <div class="process-card reveal">
+        <h3>02</h3>
+        <h4>Design</h4>
+        <p>Creating bespoke concepts, layouts, and premium design solutions.</p>
+      </div>
+      <div class="process-card reveal">
+        <h3>03</h3>
+        <h4>Production</h4>
+        <p>Handcrafting your furniture with precision and quality materials.</p>
+      </div>
+      <div class="process-card reveal">
+        <h3>04</h3>
+        <h4>Installation</h4>
+        <p>Delivering and installing your finished masterpiece with care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>Scottish Luxury</h2>
+        <p>Interior Design & Custom Furniture</p>
+        <p>Enugu, Nigeria</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="custom-furniture.html">Custom Furniture</a></li>
+          <li><a href="luxury-wardrobe.html">Wardrobes</a></li>
+          <li><a href="kitchen.html">Kitchens</a></li>
+          <li><a href="executive.html">Offices</a></li>
+          <li><a href="master.html">Bedrooms</a></li>
+          <li><a href="sofa.html">Sofas & Seats</a></li>
+          <li><a href="console.html">Console & Seats</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Scottish Luxury. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/scottishluxury" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://facebook.com/scottishluxury" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://tiktok.com/@scottishluxury" target="_blank" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+
+
+  <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    // WORKING FILTER
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card[data-cat]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+            card.style.position = 'relative';
+            card.style.visibility = 'visible';
+            card.style.pointerEvents = 'all';
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            card.style.position = 'absolute';
+            card.style.visibility = 'hidden';
+            card.style.pointerEvents = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

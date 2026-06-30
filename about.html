@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Scottish Luxury Interior & Furniture</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ABOUT HERO */
+    .about-hero {
+      min-height: 70vh;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 160px 8% 100px;
+      border-bottom: 1px solid var(--gold-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: 'SCOTTISH';
+      position: absolute;
+      right: -40px;
+      bottom: -60px;
+      font-family: var(--serif);
+      font-size: 18rem;
+      color: rgba(212,175,55,0.03);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .about-hero .eyebrow { margin-bottom: 20px; }
+
+    .about-hero h1 {
+      font-size: 4.5rem;
+      color: var(--white);
+      max-width: 700px;
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+
+    .about-hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .about-hero p {
+      color: var(--grey);
+      max-width: 580px;
+      line-height: 1.95;
+      font-size: 1rem;
+    }
+
+    /* INTRO SPLIT */
+    .about-intro {
+      padding: var(--pad);
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-intro-text .eyebrow { margin-bottom: 16px; }
+
+    .about-intro-text h2 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .about-intro-text p {
+      color: var(--grey);
+      line-height: 2;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .about-intro-image img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+    }
+
+    /* STORY SECTION */
+    .about-story {
+      padding: var(--pad);
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-story-image img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+
+    .about-story-content .eyebrow { margin-bottom: 16px; }
+
+    .about-story-content h2 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .about-story-content p {
+      color: var(--grey);
+      line-height: 2;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      margin: 32px 0;
+      background: rgba(212,175,55,0.04);
+    }
+
+    blockquote p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.2rem !important;
+      color: var(--white) !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+    }
+
+    /* WORKING SECTION */
+    .about-working {
+      padding: var(--pad);
+      background: var(--black);
+    }
+
+    .about-working .section-header { margin-bottom: 60px; }
+
+    .working-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .working-grid img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .working-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .working-item:hover img { transform: scale(1.06); }
+
+    .working-item.wide {
+      grid-column: span 2;
+    }
+
+    .working-item.wide img { height: 420px; }
+
+    .working-label {
+      padding: 14px 0 0;
+    }
+
+    .working-label p {
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* CERTIFICATES */
+    .about-certificates {
+      padding: var(--pad);
+      background: var(--dark);
+    }
+
+    .about-certificates .section-header { margin-bottom: 60px; }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--gold-border);
+      overflow: hidden;
+      transition: border-color 0.4s ease, transform 0.4s ease;
+    }
+
+    .cert-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-6px);
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .cert-info {
+      padding: 24px;
+    }
+
+    .cert-info h3 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .cert-info p {
+      color: var(--grey);
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+    }
+
+    /* VALUES */
+    .about-values {
+      padding: var(--pad);
+      background: var(--black);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gold-border);
+      margin-top: 0;
+    }
+
+    .value-card {
+      background: var(--card);
+      padding: 48px 36px;
+      transition: background 0.4s ease;
+    }
+
+    .value-card:hover { background: #1a1a1a; }
+
+    .value-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--gold-border);
+      line-height: 1;
+      margin-bottom: 20px;
+      transition: color 0.4s;
+    }
+
+    .value-card:hover .value-num { color: var(--gold); }
+
+    .value-card h3 {
+      color: var(--white);
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card p {
+      color: var(--grey);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    /* MISSION */
+    .about-mission {
+      padding: var(--pad);
+      background: var(--gold);
+      text-align: center;
+    }
+
+    .about-mission h2 {
+      font-size: 3rem;
+      color: #000;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      line-height: 1.2;
+    }
+
+    .about-mission p {
+      color: rgba(0,0,0,0.65);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    .about-mission .btn-dark {
+      display: inline-block;
+      background: #000;
+      color: var(--gold);
+      padding: 15px 36px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .about-mission .btn-dark:hover {
+      background: #1a1a1a;
+      transform: translateY(-2px);
+    }
+
+    /* STATS */
+    .about-stats {
+      padding: 80px 8%;
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .about-stat h3 {
+      font-size: 3.5rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .about-stat p {
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    /* CTA */
+    .about-cta {
+      padding: var(--pad);
+      background: var(--black);
+      text-align: center;
+    }
+
+    .about-cta h2 {
+      font-size: 3rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .about-cta p {
+      color: var(--grey);
+      max-width: 500px;
+      margin: 0 auto 40px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    .about-cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .about-hero h1 { font-size: 2.6rem; }
+      .about-hero::before { display: none; }
+
+      .about-intro,
+      .about-story { grid-template-columns: 1fr; gap: 40px; }
+
+      .about-intro-image img,
+      .about-story-image img { height: 320px; }
+
+      .working-grid { grid-template-columns: 1fr; }
+      .working-item.wide { grid-column: span 1; }
+      .working-item.wide img,
+      .working-grid img { height: 280px; }
+
+      .cert-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+
+      .about-stats { grid-template-columns: 1fr 1fr; padding: 60px 5%; }
+      .about-stat h3 { font-size: 2.5rem; }
+
+      .about-mission h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="logo">Scottish Luxury</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="openMenu()">&#9776;</button>
+  </header>
+
+  <!-- OVERLAY MENU -->
+  <div class="overlay-menu" id="overlayMenu">
+    <div class="close-btn" onclick="closeMenu()">&#10005;</div>
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="about.html" onclick="closeMenu()">About</a></li>
+      <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <span class="eyebrow fade-up">Our Story</span>
+    <h1 class="fade-up">Crafting Spaces That <em>Inspire</em> For A Lifetime</h1>
+    <p class="fade-up">
+      Scottish Luxury Interior & Furniture is more than a furniture company.
+      We are a team of passionate craftsmen, designers, and visionaries
+      dedicated to transforming ordinary spaces into extraordinary experiences.
+    </p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="about-intro">
+    <div class="about-intro-text reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2>Built on craft. Driven by excellence.</h2>
+      <p>
+        Founded in Enugu, Nigeria, Scottish Luxury Interior & Furniture was born
+        from a single, powerful belief — that every person deserves a space that
+        truly reflects who they are. A space that doesn't just look beautiful,
+        but feels like home.
+      </p>
+      <p>
+        We are not a factory. We are a workshop of dedicated craftsmen who
+        take pride in every joint, every finish, and every detail. When you
+        choose Scottish Luxury, you are choosing furniture that is built to
+        last decades, not seasons.
+      </p>
+      <p>
+        Over the years we have transformed over 150 homes, offices, and
+        commercial spaces across Nigeria — and every single one of them
+        carries our signature: uncompromising quality, thoughtful design,
+        and a finish that speaks for itself.
+      </p>
+    </div>
+    <div class="about-intro-image reveal">
+      <img src="image/wardrop/a8dc0034589118f00ce94a3b272b4f34.jpg" alt="Scottish Luxury Craftsmanship">
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="about-story">
+    <div class="about-story-image reveal">
+      <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=700" alt="Our Story">
+    </div>
+    <div class="about-story-content reveal">
+      <span class="eyebrow">Our Journey</span>
+      <h2>From a single workshop to hundreds of homes</h2>
+      <p>
+        It began with a passion for woodwork and an obsession with quality.
+        Our founder started with a small workshop, a handful of tools, and
+        an unshakeable commitment to doing things properly. No shortcuts.
+        No compromise. Just honest craftsmanship.
+      </p>
+      <p>
+        Word spread quickly. Clients who came for a wardrobe returned for
+        their kitchen. Those who came for a kitchen brought their friends
+        for entire home furnishing projects. That is the Scottish Luxury
+        experience — work so good it speaks for itself.
+      </p>
+      <blockquote>
+        <p>"Our vision is to offer sustainable luxury furnishings that suit every space, lifestyle, and budget — without ever compromising on quality."</p>
+      </blockquote>
+      <p>
+        Today, we are proud to be one of Enugu's most trusted names in
+        bespoke furniture and interior design. But our values remain exactly
+        the same as the day we started — precision, passion, and pride
+        in every piece we build.
+      </p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="about-stats">
+    <div class="about-stat reveal">
+      <h3>150+</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="about-stat reveal">
+      <h3>10+</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="about-stat reveal">
+      <h3>100%</h3>
+      <p>Client Satisfaction</p>
+    </div>
+    <div class="about-stat reveal">
+      <h3>5★</h3>
+      <p>Quality Rating</p>
+    </div>
+  </div>
+
+  <!-- WORKING / PROCESS PHOTOS -->
+  <section class="about-working">
+    <div class="section-header reveal">
+      <span class="eyebrow">Behind The Scenes</span>
+      <h2>Our Craftsmen At Work</h2>
+      <p>Every piece starts with skilled hands, quality materials, and an eye for detail.</p>
+    </div>
+    <div class="working-grid">
+      <div class="working-item wide reveal">
+        <img src="image/craft/craft (1).jpg" alt="Craftsman working">
+        <div class="working-label"><p>Workshop — Precision Cutting</p></div>
+      </div>
+      <div class="working-item reveal">
+        <img src="image/craft/craft (2).jpg" alt="Finishing work">
+        <div class="working-label"><p>Premium Finishing</p></div>
+      </div>
+      <div class="working-item reveal">
+        <img src="image/craft/craft (3).jpg" alt="Detail work">
+        <div class="working-label"><p>Detail & Assembly</p></div>
+      </div>
+      <div class="working-item reveal">
+        <img src="image/craft/craft (4).jpg" alt="Material selection">
+        <div class="working-label"><p>Material Selection</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="about-certificates">
+    <div class="section-header reveal">
+      <span class="eyebrow">Credentials & Recognition</span>
+      <h2>Certified Excellence</h2>
+      <p>Our work is backed by professional training, industry recognition, and a proven track record of delivering exceptional results.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <img src="image/cert.jpg" alt="Certificate of Excellence">
+        <div class="cert-info">
+          <h3>Certificate of Excellence</h3>
+          <p>Interior Design & Craftsmanship · 2023</p>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <img src="image/IMG-20260609-WA0035.jpg" alt="Professional Certification">
+        <div class="cert-info">
+          <h3>Professional Design Certification</h3>
+          <p>Nigerian Institute of Interior Design · 2021</p>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <img src="image/IMG-20260609-WA0035.jpg" alt="Award of Recognition">
+        <div class="cert-info">
+          <h3>Award of Recognition</h3>
+          <p>Top Furniture Brand, Enugu · 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="about-values">
+    <div class="section-header reveal">
+      <span class="eyebrow">What Drives Us</span>
+      <h2>Our Core Values</h2>
+      <p>The principles behind every piece we build and every client we serve.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-num">01</div>
+        <h3>Honest Craftsmanship</h3>
+        <p>We use real materials, real joinery, and real skill. No shortcuts, no filler — what you see is exactly what your furniture is made of.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-num">02</div>
+        <h3>Built Around You</h3>
+        <p>Every project starts with a listening session. We learn your lifestyle, your taste, and your space before we design a single piece.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-num">03</div>
+        <h3>Made To Last</h3>
+        <p>We measure success in decades. If a piece isn't strong enough to outlast trends and be passed down, it isn't good enough for Scottish Luxury.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION CTA -->
+  <section class="about-mission reveal">
+    <h2>Ready to transform your space?</h2>
+    <p>Let's work together to create something extraordinary. Book a free design consultation today.</p>
+    <a href="index.html#contact" class="btn-dark">Get a Free Consultation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>Scottish Luxury</h2>
+        <p>Interior Design & Custom Furniture</p>
+        <p>Enugu, Nigeria</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="luxury-wardrobe.html">Wardrobes</a></li>
+          <li><a href="kitchen.html">Kitchens</a></li>
+          <li><a href="executive.html">Offices</a></li>
+          <li><a href="master.html">Bedrooms</a></li>
+          <li><a href="custom.html">custom-furniture</a></li>
+         
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Scottish Luxury. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/scottishluxury" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://facebook.com/scottishluxury" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://tiktok.com/@scottishluxury" target="_blank" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+
+
+  <a href="https://wa.me/234802 031 6208" class="whatsapp-float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

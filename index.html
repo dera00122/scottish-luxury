@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scottish Luxury Interior & Furniture</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="logo">Scottish Luxury</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="openMenu()">&#9776;</button>
+  </header>
+
+  <!-- OVERLAY MENU -->
+  <div class="overlay-menu" id="overlayMenu">
+    <div class="close-btn" onclick="closeMenu()">&#10005;</div>
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="about.html" onclick="closeMenu()">About</a></li>
+      <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/videos/hero-video.mp4.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <p class="eyebrow">Premium Interiors & Furniture — Enugu, Nigeria</p>
+      <h1>Luxury Furniture Crafted For <em>Timeless</em> Living</h1>
+      <p class="hero-desc">
+        Bespoke furniture, sophisticated interiors, and premium craftsmanship
+        tailored to your lifestyle and vision.
+      </p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Get Consultation</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+      <p>Scroll</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Custom Furniture</span><span class="dot">·</span>
+      <span>Luxury Wardrobes</span><span class="dot">·</span>
+      <span>Kitchen Cabinets</span><span class="dot">·</span>
+      <span>Executive Offices</span><span class="dot">·</span>
+      <span>Sofa Designs</span><span class="dot">·</span>
+      <span>Full Building Furnishing</span><span class="dot">·</span>
+      <span>Console & Seats</span><span class="dot">·</span>
+      <span>Master Bedrooms</span><span class="dot">·</span>
+      <span>Custom Furniture</span><span class="dot">·</span>
+      <span>Luxury Wardrobes</span><span class="dot">·</span>
+      <span>Kitchen Cabinets</span><span class="dot">·</span>
+      <span>Executive Offices</span><span class="dot">·</span>
+      <span>Sofa Designs</span><span class="dot">·</span>
+      <span>Full Building Furnishing</span><span class="dot">·</span>
+      <span>Console & Seats</span><span class="dot">·</span>
+      <span>Master Bedrooms</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="section-header reveal">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Our Featured Projects</h2>
+      <p>Every project reflects our dedication to luxury, precision craftsmanship, and timeless design.</p>
+    </div>
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800" alt="Luxury Living Room">
+        <div class="project-info">
+          <p class="proj-cat">Interior Design</p>
+          <h3>Luxury Living Room</h3>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800" alt="Modern Kitchen">
+        <div class="project-info">
+          <p class="proj-cat">Custom Cabinetry</p>
+          <h3>Modern Kitchen</h3>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800" alt="Master Bedroom">
+        <div class="project-info">
+          <p class="proj-cat">Luxury Furniture</p>
+          <h3>Master Bedroom</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SCOTTISH WAY -->
+  <section class="scottish-way reveal">
+    <div class="way-image">
+      <img src="image/scottish way.jpeg" alt="Scottish Luxury Craftsmanship">
+    </div>
+    <div class="way-content">
+      <span class="eyebrow">The Scottish Way</span>
+      <h2>Craftsmanship Rooted In Excellence</h2>
+      <p>
+        At Scottish Luxury Interior & Furniture, we combine timeless design,
+        premium materials, and expert craftsmanship to create spaces that
+        inspire and endure. Every piece we build carries our signature —
+        an unwavering commitment to quality that your clients will feel
+        the moment they walk in.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <h3>300+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat">
+          <h3>15+</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat">
+          <h3>100%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2>Luxury Solutions Tailored For You</h2>
+      <p>Click any service to explore more details.</p>
+    </div>
+    <div class="services-grid">
+      <a href="custom.html" class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Custom Furniture</h3>
+        <p>Bespoke furniture crafted precisely for your lifestyle and space.</p>
+      </a>
+      <a href="luxury-wardrobe.html" class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Luxury Wardrobes</h3>
+        <p>Elegant storage solutions with premium finishing and soft-close systems.</p>
+      </a>
+      <a href="kitchen.html" class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Kitchen Cabinets</h3>
+        <p>Modern kitchen designs built with precision and lasting quality.</p>
+      </a>
+      <a href="sofa.html" class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Sofa & Seating</h3>
+        <p>L-shape sofas, console seats and custom lounge designs.</p>
+      </a>
+      <a href="executive.html" class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Office Interiors</h3>
+        <p>Executive workspaces designed for productivity and prestige.</p>
+      </a>
+      <a href="full.html" class="service-card reveal">
+        <div class="service-icon">✦</div>
+        <h3>Full Building Furnishing</h3>
+        <p>Complete furnishing solutions for entire buildings from concept to finish.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-header reveal">
+      <span class="eyebrow">Featured Work</span>
+      <h2>Our Luxury Creations</h2>
+      <p>A collection of our finest furniture and interior design projects.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item large reveal">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900" alt="">
+        <div class="gallery-hover"><span>Living Room</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600" alt="">
+        <div class="gallery-hover"><span>Kitchen</span></div>
+      </div>
+      <div class="gallery-item reveal">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600" alt="">
+        <div class="gallery-hover"><span>Wardrobe</span></div>
+      </div>
+      <div class="gallery-item large reveal">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900" alt="">
+        <div class="gallery-hover"><span>Bedroom</span></div>
+      </div>
+    </div>
+    <div class="view-more reveal">
+      <a href="projects.html">View All Projects &rarr;</a>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us reveal">
+    <div class="why-container">
+      <div class="why-left">
+        <span class="eyebrow">Why Work With Us</span>
+        <h2>We Don't Just Build Furniture — We Build Experiences</h2>
+      </div>
+      <div class="why-right">
+        <p>
+          At Scottish Luxury Interior & Furniture, we believe every space tells a story.
+          Our approach combines precision craftsmanship, premium materials, and timeless
+          design principles to create interiors that feel alive.
+        </p>
+        <p>
+          From concept to completion, we focus on detail, durability, and elegance —
+          ensuring every project reflects true luxury living.
+        </p>
+        <div class="why-points">
+          <div class="why-point">✔ Premium Craftsmanship</div>
+          <div class="why-point">✔ High-Quality Materials</div>
+          <div class="why-point">✔ On-Time Delivery</div>
+          <div class="why-point">✔ Modern Design Approach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-header reveal">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's Build Your Dream Space</h2>
+      <p>Reach out for custom furniture, interior design, and full home transformations.</p>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info reveal">
+        <h3>Scottish Luxury Interior & Furniture</h3>
+        <div class="contact-detail">
+          <span>📍</span>
+          <p>Enugu, Nigeria</p>
+        </div>
+        <div class="contact-detail">
+          <span>📞</span>
+          <p>+234 802 031 6208</p>
+        </div>
+        <div class="contact-detail">
+          <span>✉</span>
+          <p>scottishluxury@gmail.com</p>
+        </div>
+        <a class="whatsapp-btn" href="https://wa.me/234802 031 6208" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="white">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/>
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xpqgjrgp" method="POST">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Your Message</label>
+          <textarea rows="5" name="message" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message</button>
+        <div class="form-success" id="contactSuccess">
+          Thank you! We'll be in touch within 24 hours.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>Scottish Luxury</h2>
+        <p>Interior Design & Custom Furniture</p>
+        <p>Enugu, Nigeria</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="luxury-wardrobe.html">Wardrobes</a></li>
+          <li><a href="kitchen.html">Kitchens</a></li>
+          <li><a href="executive.html">Offices</a></li>
+          <li><a href="master.html">Bedrooms</a></li>
+          <li><a href="custom.html">custom-furniture</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Scottish Luxury. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/scottishluxury" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://facebook.com/scottishluxury" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://tiktok.com/@scottishluxury" target="_blank" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/234802 031 6208" class="whatsapp-float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById('contactSuccess').style.display = 'block';
+          form.reset();
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        } else {
+          alert('Something went wrong. Please try again or message us on WhatsApp.');
+          submitBtn.textContent = 'Send Message';
+          submitBtn.disabled = false;
+        }
+      }).catch(() => {
+        alert('Something went wrong. Please try again or message us on WhatsApp.');
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>

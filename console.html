@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Console & Seats | Scottish Luxury</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .masonry-grid { columns: 3; column-gap: 16px; padding: 80px 8%; background: var(--black); }
+    .masonry-item { break-inside: avoid; margin-bottom: 16px; overflow: hidden; position: relative; cursor: pointer; background: var(--card); }
+    .masonry-item img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+    .masonry-item:hover img { transform: scale(1.06); }
+    .masonry-label { position: absolute; bottom: 0; left: 0; width: 100%; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); opacity: 0; transition: opacity 0.4s ease; }
+    .masonry-item:hover .masonry-label { opacity: 1; }
+    .masonry-label h3 { color: var(--white); font-size: 0.95rem; font-family: var(--serif); }
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.97); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; padding: 40px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 880px; max-height: 80vh; width: auto; height: auto; border: 1px solid var(--gold-border); object-fit: contain; }
+    .lightbox h3 { color: var(--white); margin-top: 20px; font-family: var(--serif); font-size: 1.1rem; }
+    .lightbox-close { position: absolute; top: 28px; right: 40px; font-size: 2rem; color: var(--gold); cursor: pointer; background: none; border: none; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2.5rem; color: var(--gold); cursor: pointer; background: none; border: none; padding: 10px; }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    @media (max-width: 768px) { .masonry-grid { columns: 2; padding: 60px 5%; } }
+    @media (max-width: 480px) { .masonry-grid { columns: 1; } }
+  </style>
+</head>
+<body>
+
+  <header class="project-page-header">
+    <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+    <a href="index.html" class="logo-small">Scottish Luxury</a>
+  </header>
+
+  <section class="collection-hero">
+    <h1>Console Tables & Accent Seats</h1>
+    <p>Bespoke console tables, accent chairs, and statement pieces that complete every luxury interior.</p>
+  </section>
+
+  <!-- ADD YOUR IMAGES BELOW -->
+  <!-- Replace photo-1.jpg, photo-2.jpg etc with your real image filenames -->
+  <div class="masonry-grid" id="masonryGrid">
+    <div class="masonry-item" onclick="openLightbox(0)">
+      <img src="image/console/con (2).jpg" alt="Console Tables & Accent Seats 1" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 1</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(1)">
+      <img src="image/console/con (1).jpg" alt="Console Tables & Accent Seats 2" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 2</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(2)">
+      <img src="image/console/con (3).jpg" alt="Console Tables & Accent Seats 3" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 3</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(3)">
+      <img src="image/console/con (4).jpg" alt="Console Tables & Accent Seats 4" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 4</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(4)">
+      <img src="image/console/con (5).jpg" alt="Console Tables & Accent Seats 5" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 5</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(5)">
+      <img src="image/console/con (6).jpg" alt="Console Tables & Accent Seats 6" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 6</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(6)">
+      <img src="image/console/con (7).jpg" alt="Console Tables & Accent Seats 7" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 7</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(7)">
+      <img src="image/console/con (8).jpg" alt="Console Tables & Accent Seats 8" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 8</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(8)">
+      <img src="image/console/con (9).jpg" alt="Console Tables & Accent Seats 9" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 9</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(9)">
+      <img src="image/console/con (10).jpg" alt="Console Tables & Accent Seats 10" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 10</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(10)">
+      <img src="image/console/con (11).jpg" alt="Console Tables & Accent Seats 11" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 11</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(11)">
+      <img src="image/console/con (12).jpg" alt="Console Tables & Accent Seats 12" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 12</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(12)">
+      <img src="image/console/con (13).jpg" alt="Console Tables & Accent Seats 13" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 13</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(13)">
+      <img src="image/console/con (14).jpg" alt="Console Tables & Accent Seats 14" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 14</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(14)">
+      <img src="image/console/con (15).jpg" alt="Console Tables & Accent Seats 15" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 15</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(15)">
+      <img src="image/console/con (16).jpg" alt="Console Tables & Accent Seats 16" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 16</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(16)">
+      <img src="image/console/con (17).jpg" alt="Console Tables & Accent Seats 17" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 17</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(17)">
+      <img src="image/console/con (18).jpg" alt="Console Tables & Accent Seats 18" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 18</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(18)">
+      <img src="image/console/con (19).jpg" alt="Console Tables & Accent Seats 19" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 19</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(19)">
+      <img src="image/console/con (20).jpg" alt="Console Tables & Accent Seats 20" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 20</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(20)">
+      <img src="image/console/con (21).jpg" alt="Console Tables & Accent Seats 21" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 21</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(21)">
+      <img src="image/console/con (22).jpg" alt="Console Tables & Accent Seats 22" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 22</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(22)">
+      <img src="image/console/con (23).jpg" alt="Console Tables & Accent Seats 23" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 23</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(23)">
+      <img src="image/console/con (24).jpg" alt="Console Tables & Accent Seats 24" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 24</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(24)">
+      <img src="image/console/con (25).jpg" alt="Console Tables & Accent Seats 25" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 25</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(25)">
+      <img src="image/console/con (26).jpg" alt="Console Tables & Accent Seats 26" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 26</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(26)">
+      <img src="image/console/con (27).jpg" alt="Console Tables & Accent Seats 27" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 27</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(27)">
+      <img src="image/console/con (28).jpg" alt="Console Tables & Accent Seats 28" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 28</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(28)">
+      <img src="image/console/con (29).jpg" alt="Console Tables & Accent Seats 29" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 29</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(29)">
+      <img src="image/console/con (30).jpg" alt="Console Tables & Accent Seats 30" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 30</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(30)">
+      <img src="image/console/con (31).jpg" alt="Console Tables & Accent Seats 31" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 31</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(31)">
+      <img src="image/console/con (32).jpg" alt="Console Tables & Accent Seats 32" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 32</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(32)">
+      <img src="image/console/con (33).jpg" alt="Console Tables & Accent Seats 33" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 33</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(33)">
+      <img src="image/console/con (34).jpg" alt="Console Tables & Accent Seats 34" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 34</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(34)">
+      <img src="image/console/con (35).jpg" alt="Console Tables & Accent Seats 35" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 35</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(35)">
+      <img src="image/console/con (36).jpg" alt="Console Tables & Accent Seats 36" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 36</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(36)">
+      <img src="image/console/con (37).jpg" alt="Console Tables & Accent Seats 37" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 37</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(37)">
+      <img src="image/console/con (38).jpg" alt="Console Tables & Accent Seats 38" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 38</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(38)">
+      <img src="image/console/con (39).jpg" alt="Console Tables & Accent Seats 39" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 39</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(39)">
+      <img src="image/console/con (40).jpg" alt="Console Tables & Accent Seats 40" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 40</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(40)">
+      <img src="image/console/con (41).jpg" alt="Console Tables & Accent Seats 41" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 41</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(41)">
+      <img src="image/console/con (42).jpg" alt="Console Tables & Accent Seats 42" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 42</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(42)">
+      <img src="image/console/con (43).jpg" alt="Console Tables & Accent Seats 43" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 43</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(43)">
+      <img src="image/console/con (44).jpg" alt="Console Tables & Accent Seats 44" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 44</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(44)">
+      <img src="image/console/con (45).jpg" alt="Console Tables & Accent Seats 45" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 45</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(45)">
+      <img src="image/console/con (46).jpg" alt="Console Tables & Accent Seats 46" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 46</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(46)">
+      <img src="image/console/con (47).jpg" alt="Console Tables & Accent Seats 47" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 47</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(47)">
+      <img src="image/console/con ().jpg" alt="Console Tables & Accent Seats 48" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 48</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(48)">
+      <img src="image/console/con (49).jpg" alt="Console Tables & Accent Seats 49" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 49</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(49)">
+      <img src="image/console/con (50).jpg" alt="Console Tables & Accent Seats 50" loading="lazy">
+      <div class="masonry-label"><h3>Console Tables & Accent Seats 50</h3></div>
+    </div>
+  </div>
+
+  <section class="project-story">
+    <div class="story-text reveal">
+      <h2>The Details That Define a Space</h2>
+      <p>Console tables and accent seats are the finishing touches that elevate a room from furnished to designed.</p>
+      <p>Every piece is built to complement your space and reflect your taste.</p>
+    </div>
+  </section>
+
+  <section class="project-features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Console tables in wood and marble</li>
+      <li>Custom accent chairs</li>
+      <li>Dining and bench seating</li>
+      <li>Premium upholstery options</li>
+      <li>Designed to match your interior</li>
+    </ul>
+  </section>
+
+  <section class="project-cta reveal">
+    <h2>Want Something Like This?</h2>
+    <p>Let's bring your vision to life.</p>
+    <a href="https://wa.me/234802 031 6208" class="whatsapp-btn" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </section>
+
+  <footer class="project-footer">&copy; 2026 Scottish Luxury Interior &amp; Furniture</footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#8249;</button>
+    <img id="lightboxImg" src="" alt="">
+    <h3 id="lightboxTitle"></h3>
+    <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#8250;</button>
+  </div>
+
+  <a href="https://wa.me/234802 031 6208" class="whatsapp-float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll(".masonry-item");
+    function openLightbox(index) { currentIndex = index; updateLightbox(); document.getElementById("lightbox").classList.add("open"); document.body.style.overflow = "hidden"; }
+    function closeLightbox() { document.getElementById("lightbox").classList.remove("open"); document.body.style.overflow = ""; }
+    function changeImage(dir) { currentIndex = (currentIndex + dir + items.length) % items.length; updateLightbox(); }
+    function updateLightbox() { const item = items[currentIndex]; document.getElementById("lightboxImg").src = item.querySelector("img").src; const h3 = item.querySelector("h3"); document.getElementById("lightboxTitle").innerText = h3 ? h3.innerText : ""; }
+    document.getElementById("lightbox").addEventListener("click", function(e) { if (e.target === this) closeLightbox(); });
+    document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeLightbox(); if (e.key === "ArrowRight") changeImage(1); if (e.key === "ArrowLeft") changeImage(-1); });
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>

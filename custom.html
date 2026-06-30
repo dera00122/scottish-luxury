@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Furniture | Scottish Luxury</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .masonry-grid { columns: 3; column-gap: 16px; padding: 80px 8%; background: var(--black); }
+    .masonry-item { break-inside: avoid; margin-bottom: 16px; overflow: hidden; position: relative; cursor: pointer; background: var(--card); }
+    .masonry-item img, .masonry-item video { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+    .masonry-item:hover img, .masonry-item:hover video { transform: scale(1.06); }
+    .masonry-label { position: absolute; bottom: 0; left: 0; width: 100%; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); opacity: 0; transition: opacity 0.4s ease; }
+    .masonry-item:hover .masonry-label { opacity: 1; }
+    .masonry-label h3 { color: var(--white); font-size: 0.95rem; font-family: var(--serif); }
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.97); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; padding: 40px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 880px; max-height: 80vh; width: auto; height: auto; border: 1px solid var(--gold-border); object-fit: contain; }
+    .lightbox h3 { color: var(--white); margin-top: 20px; font-family: var(--serif); font-size: 1.1rem; }
+    .lightbox-close { position: absolute; top: 28px; right: 40px; font-size: 2rem; color: var(--gold); cursor: pointer; background: none; border: none; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2.5rem; color: var(--gold); cursor: pointer; background: none; border: none; padding: 10px; }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    @media (max-width: 768px) { .masonry-grid { columns: 2; padding: 60px 5%; } }
+    @media (max-width: 480px) { .masonry-grid { columns: 1; } }
+  </style>
+</head>
+<body>
+
+  <header class="project-page-header">
+    <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+    <a href="index.html" class="logo-small">Scottish Luxury</a>
+  </header>
+
+  <section class="collection-hero">
+    <h1>Custom Furniture Collection</h1>
+    <p>Bespoke furniture pieces crafted to your exact specifications — tables, shelving, storage, and more.</p>
+  </section>
+
+  <!-- ADD YOUR IMAGES BELOW -->
+  <!-- Files should be named: photo (1).jpg, photo (2).jpg ... up to photo (50).jpg -->
+  <!-- Place them inside the image/custom/ folder -->
+  <div class="masonry-grid" id="masonryGrid">
+    <div class="masonry-item" onclick="openLightbox(0)">
+      <img src="image/custom/photo (1).jpg" alt="Custom Furniture Collection 1" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 1</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(1)">
+      <img src="image/custom/photo (2).jpg" alt="Custom Furniture Collection 2" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 2</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(2)">
+      <img src="image/custom/photo (3).jpg" alt="Custom Furniture Collection 3" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 3</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(3)">
+      <img src="image/custom/photo (4).jpg" alt="Custom Furniture Collection 4" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 4</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(4)">
+      <img src="image/custom/photo (5).jpg" alt="Custom Furniture Collection 5" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 5</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(5)">
+      <img src="image/custom/photo (6).jpg" alt="Custom Furniture Collection 6" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 6</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(6)">
+      <img src="image/custom/photo (7).jpg" alt="Custom Furniture Collection 7" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 7</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(7)">
+      <img src="image/custom/photo (8).jpg" alt="Custom Furniture Collection 8" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 8</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(8)">
+      <img src="image/custom/photo (9).jpg" alt="Custom Furniture Collection 9" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 9</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(9)">
+      <img src="image/custom/photo (10).jpg" alt="Custom Furniture Collection 10" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 10</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(10)">
+      <img src="image/custom/photo (11).jpg" alt="Custom Furniture Collection 11" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 11</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(11)">
+      <img src="image/custom/photo (12).jpg" alt="Custom Furniture Collection 12" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 12</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(12)">
+      <img src="image/custom/photo (13).jpg" alt="Custom Furniture Collection 13" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 13</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(13)">
+      <img src="image/custom/photo (14).jpg" alt="Custom Furniture Collection 14" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 14</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(14)">
+      <img src="image/custom/photo (15).jpg" alt="Custom Furniture Collection 15" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 15</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(15)">
+      <img src="image/custom/photo (16).jpg" alt="Custom Furniture Collection 16" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 16</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(16)">
+      <img src="image/custom/photo (17).jpg" alt="Custom Furniture Collection 17" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 17</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(17)">
+      <img src="image/custom/photo (18).jpg" alt="Custom Furniture Collection 18" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 18</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(18)">
+      <img src="image/custom/photo (19).jpg" alt="Custom Furniture Collection 19" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 19</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(19)">
+      <img src="image/custom/photo (20).jpg" alt="Custom Furniture Collection 20" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 20</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(20)">
+      <img src="image/custom/photo (21).jpg" alt="Custom Furniture Collection 21" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 21</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(21)">
+      <img src="image/custom/photo (22).jpg" alt="Custom Furniture Collection 22" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 22</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(22)">
+      <img src="image/custom/photo (23).jpg" alt="Custom Furniture Collection 23" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 23</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(23)">
+      <img src="image/custom/photo (24).jpg" alt="Custom Furniture Collection 24" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 24</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(24)">
+      <img src="image/custom/photo (25).jpg" alt="Custom Furniture Collection 25" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 25</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(25)">
+      <img src="image/custom/photo (26).jpg" alt="Custom Furniture Collection 26" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 26</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(26)">
+      <img src="image/custom/photo (27).jpg" alt="Custom Furniture Collection 27" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 27</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(27)">
+      <img src="image/custom/photo (28).jpg" alt="Custom Furniture Collection 28" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 28</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(28)">
+      <img src="image/custom/photo (29).jpg" alt="Custom Furniture Collection 29" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 29</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(29)">
+      <img src="image/custom/photo (30).jpg" alt="Custom Furniture Collection 30" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 30</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(30)">
+      <img src="image/custom/photo (31).jpg" alt="Custom Furniture Collection 31" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 31</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(31)">
+      <img src="image/custom/photo (32).jpg" alt="Custom Furniture Collection 32" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 32</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(32)">
+      <img src="image/custom/photo (33).jpg" alt="Custom Furniture Collection 33" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 33</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(33)">
+      <img src="image/custom/photo (34).jpg" alt="Custom Furniture Collection 34" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 34</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(34)">
+      <img src="image/custom/photo (35).jpg" alt="Custom Furniture Collection 35" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 35</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(35)">
+      <img src="image/custom/photo (36).jpg" alt="Custom Furniture Collection 36" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 36</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(36)">
+      <img src="image/custom/photo (37).jpg" alt="Custom Furniture Collection 37" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 37</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(37)">
+      <img src="image/custom/photo (38).jpg" alt="Custom Furniture Collection 38" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 38</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(38)">
+      <img src="image/custom/photo (39).jpg" alt="Custom Furniture Collection 39" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 39</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(39)">
+      <img src="image/custom/photo (40).jpg" alt="Custom Furniture Collection 40" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 40</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(40)">
+      <img src="image/custom/photo (41).jpg" alt="Custom Furniture Collection 41" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 41</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(41)">
+      <img src="image/custom/photo (42).jpg" alt="Custom Furniture Collection 42" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 42</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(42)">
+      <img src="image/custom/photo (43).jpg" alt="Custom Furniture Collection 43" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 43</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(43)">
+      <img src="image/custom/photo (44).jpg" alt="Custom Furniture Collection 44" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 44</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(44)">
+      <img src="image/custom/photo (45).jpg" alt="Custom Furniture Collection 45" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 45</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(45)">
+      <img src="image/custom/photo (46).jpg" alt="Custom Furniture Collection 46" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 46</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(46)">
+      <img src="image/custom/photo (47).jpg" alt="Custom Furniture Collection 47" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 47</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(47)">
+      <img src="image/custom/photo (48).jpg" alt="Custom Furniture Collection 48" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 48</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(48)">
+      <img src="image/custom/photo (49).jpg" alt="Custom Furniture Collection 49" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 49</h3></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(49)">
+      <img src="image/custom/photo (50).jpg" alt="Custom Furniture Collection 50" loading="lazy">
+      <div class="masonry-label"><h3>Custom Furniture Collection 50</h3></div>
+    </div>
+  </div>
+
+  <section class="project-story">
+    <div class="story-text reveal">
+      <h2>Furniture Built Around You</h2>
+      <p>Not every piece fits into a single category. Our custom furniture collection covers the bespoke dining tables, coffee tables, shelving units, and storage solutions that complete a home.</p>
+      <p>Whatever you envision, we bring it to life with premium materials and meticulous craftsmanship — built exactly to your space and style.</p>
+    </div>
+  </section>
+
+  <section class="project-features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Custom dining and coffee tables</li>
+      <li>Bespoke shelving and storage units</li>
+      <li>Premium hardwood materials</li>
+      <li>Tailored to your exact dimensions</li>
+      <li>Finished to match your interior style</li>
+    </ul>
+  </section>
+
+  <section class="project-cta reveal">
+    <h2>Want Something Like This?</h2>
+    <p>Let's bring your vision to life.</p>
+    <a href="https://wa.me/234802 031 6208" class="whatsapp-btn" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </section>
+
+  <footer class="project-footer">&copy; 2026 Scottish Luxury Interior &amp; Furniture</footer>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#8249;</button>
+    <img id="lightboxImg" src="" alt="">
+    <h3 id="lightboxTitle"></h3>
+    <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#8250;</button>
+  </div>
+
+  <a href="https://wa.me/234802 031 6208" class="whatsapp-float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.77L0 32l8.43-2.01A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.894 22.324c-.33.927-1.922 1.77-2.646 1.883-.678.106-1.53.15-2.468-.155-.569-.184-1.3-.43-2.234-.842-3.937-1.7-6.507-5.67-6.703-5.933-.196-.263-1.6-2.126-1.6-4.055s1.013-2.878 1.372-3.27c.358-.39.78-.488 1.04-.488.26 0 .52.002.748.014.24.012.562-.091.88.671.33.787 1.12 2.716 1.218 2.912.098.196.163.424.033.683-.13.26-.196.423-.39.651-.195.228-.41.51-.585.684-.195.195-.398.406-.171.797.228.39 1.013 2.358 1.95 3.158 1.338 1.95 2.46 2.56 2.916 2.854.456.293.72.244.985-.049.267-.293 1.137-1.327 1.44-1.782.303-.456.606-.38 1.023-.228.416.15 2.64 1.245 3.094 1.47.456.228.76.342.872.53.11.195.11 1.122-.22 2.05z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+  <script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll(".masonry-item");
+    function openLightbox(index) { currentIndex = index; updateLightbox(); document.getElementById("lightbox").classList.add("open"); document.body.style.overflow = "hidden"; }
+    function closeLightbox() { document.getElementById("lightbox").classList.remove("open"); document.body.style.overflow = ""; }
+    function changeImage(dir) { currentIndex = (currentIndex + dir + items.length) % items.length; updateLightbox(); }
+    function updateLightbox() { const item = items[currentIndex]; document.getElementById("lightboxImg").src = item.querySelector("img").src; const h3 = item.querySelector("h3"); document.getElementById("lightboxTitle").innerText = h3 ? h3.innerText : ""; }
+    document.getElementById("lightbox").addEventListener("click", function(e) { if (e.target === this) closeLightbox(); });
+    document.addEventListener("keydown", function(e) { if (e.key === "Escape") closeLightbox(); if (e.key === "ArrowRight") changeImage(1); if (e.key === "ArrowLeft") changeImage(-1); });
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>
